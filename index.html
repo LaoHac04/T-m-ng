@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm đường Nha Trang</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">BẢN ĐỒ THÀNH PHỐ</p>
+      <h1>Tìm đường Nha Trang</h1>
+      <p class="subtitle">Chọn điểm đi, điểm đến và tìm tuyến đường phù hợp.</p>
+    </div>
+    <span class="city-tag">📍 Khánh Hòa, Việt Nam</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Hành trình của bạn</h2>
+      <p class="hint">Nhập địa chỉ hoặc chọn trực tiếp một điểm trên bản đồ.</p>
+
+      <label for="start">Điểm xuất phát</label>
+      <div class="field-row">
+        <input id="start" type="text" placeholder="Ví dụ: Ga Nha Trang">
+        <button id="pickStart" class="pick-btn" type="button" title="Chọn trên bản đồ">Chọn</button>
+      </div>
+
+      <label for="end">Điểm đến</label>
+      <div class="field-row">
+        <input id="end" type="text" placeholder="Ví dụ: Tháp Bà Ponagar">
+        <button id="pickEnd" class="pick-btn" type="button" title="Chọn trên bản đồ">Chọn</button>
+      </div>
+
+      <div class="actions">
+        <button id="locateBtn" class="secondary-btn" type="button">◎ Vị trí của tôi</button>
+        <button id="routeBtn" class="primary-btn" type="button">Tìm đường</button>
+      </div>
+      <p id="status" class="status" role="status">Mẹo: nhấn “Chọn” rồi nhấn lên bản đồ để đặt điểm.</p>
+
+      <div id="routeInfo" class="route-info hidden">
+        <div class="metric">
+          <span>Khoảng cách</span>
+          <strong id="distance">—</strong>
+        </div>
+        <div class="metric">
+          <span>Thời gian ước tính</span>
+          <strong id="duration">—</strong>
+        </div>
+        <p id="routeNote" class="route-note"></p>
+      </div>
+
+      <div class="legend">
+        <div><i class="dot start-dot"></i> Điểm xuất phát</div>
+        <div><i class="dot end-dot"></i> Điểm đến</div>
+        <div><i class="line-swatch"></i> Tuyến đường</div>
+      </div>
+      <p class="disclaimer">Dữ liệu bản đồ và định tuyến được lấy từ các dịch vụ OpenStreetMap và OSRM. Tuyến ngắn nhất được chọn trong các phương án OSRM trả về; kết quả có thể không phải đường ngắn nhất tuyệt đối.</p>
+    </section>
+
+    <section class="map-panel">
+      <div id="map" aria-label="Bản đồ Nha Trang"></div>
+      <div class="map-caption">Bản đồ Nha Trang · Nhấn “Chọn” ở ô điểm đi/đến rồi nhấn lên bản đồ.</div>
+    </section>
+  </main>
+
+  <footer>Đồ án web tĩnh · HTML, CSS, JavaScript · Không cần máy chủ riêng</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
